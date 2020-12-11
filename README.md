@@ -19,7 +19,11 @@ Additional rules:
 
 ## Backend
 
-First of all install the dependencies by issuing:
+Go to the backend subdirectory:
+
+    cd backend
+
+Once there, first of all install the dependencies by issuing:
 
     npm install
 
