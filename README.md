@@ -27,7 +27,7 @@ To run the backend server
 
     npm start
 
-The backend will be served on http://localhost:3000
+The backend will be served on http://localhost:3030
 
 If you want to run the tests first
 
