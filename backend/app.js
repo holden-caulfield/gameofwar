@@ -1,8 +1,12 @@
 const express = require("express")
 const app = express()
-const port = 3030
+const cors = require("cors")
+
 const { applyRulesToMap } = require("./model/rules")
 
+const port = 3030
+
+app.use(cors())
 app.use(express.json())
 
 app.get("/", (req, res) => {
@@ -11,6 +15,7 @@ app.get("/", (req, res) => {
 
 app.post("/cycle", (req, res) => {
   res.status(200)
+  console.log(req.body)
   res.json(applyRulesToMap(req.body.map))
 })
 
