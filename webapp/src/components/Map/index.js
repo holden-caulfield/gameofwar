@@ -1,16 +1,5 @@
-import React, { useState } from "react"
-import useInterval from "hooks/useInterval"
-import { getNextCycle } from "api/cycles"
-
+import React from "react"
 import styles from "./styles.module.css"
-
-const INITAL_ROWS = [
-  [0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0],
-  [0, 1, 1, 1, 0],
-  [0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0]
-]
 
 const Cell = ({ value }) => (
   <div
@@ -26,20 +15,12 @@ const Row = ({ cells = [] }) => (
   </div>
 )
 
-const Map = () => {
-  const [rows, setRows] = useState(INITAL_ROWS)
-
-  useInterval(() => {
-    getNextCycle(rows).then(setRows)
-  }, 1000)
-
-  return (
-    <div className={styles.map}>
-      {rows.map((rowCells, index) => (
-        <Row cells={rowCells} key={`row_${index}`} />
-      ))}
-    </div>
-  )
-}
+const Map = ({ mapRows = [] }) => (
+  <div className={styles.map}>
+    {mapRows.map((rowCells, index) => (
+      <Row cells={rowCells} key={`row_${index}`} />
+    ))}
+  </div>
+)
 
 export default Map
