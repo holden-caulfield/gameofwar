@@ -23,3 +23,11 @@
 .deadCell {
   background-color: white;
 }
+
+.editable {
+  cursor: pointer;
+}
+
+.nonEditable {
+  cursor: default;
+}
